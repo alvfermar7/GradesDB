@@ -20,6 +20,8 @@ CREATE TABLE professors(
 	category VARCHAR(30) NOT NULL,
 	PRIMARY KEY (professor_id),
 	FOREIGN KEY (professor_id) REFERENCES people(person_id)
+	CONSTRAINT ck_professors_category CHECK(
+		category IN ('Ayudante', 'AyudanteDoctor', 'Titular', 'Catedratico'))
 );
 
 CREATE TABLE students (
