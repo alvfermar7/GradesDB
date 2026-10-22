@@ -1,3 +1,6 @@
+CREATE DATABASE if NOT EXISTS GradesDB;
+USE GradesDB;
+
 DROP TABLE IF EXISTS teaching_loads;
 DROP TABLE IF EXISTS grades;
 DROP TABLE IF EXISTS group_enrollments;
