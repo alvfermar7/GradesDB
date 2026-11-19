@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-USE gradesDB;
+USE GradesDB;
 
 SELECT *
 FROM subjects;
@@ -8,16 +7,15 @@ SELECT s.subject_name, s.acronym
 FROM subjects s
 WHERE s.acronym = 'IISSI-1';
 
-
 SELECT s.subject_name, s.acronym, s.subject_type
 FROM subjects s
-WHERE s.subject_type = 'Formacion Basica';
+WHERE s.subject_type = 'Formación Básica';
 
 -- join
 SELECT p.first_name, p.last_name, pr.category
 FROM professors pr
-JOIN people p ON  pr.professor_id = p.person_id
-WHERE pr.category = 'Catedratico';
+JOIN people p ON pr.professor_id = p.person_id
+WHERE pr.category = 'Catedrático';
 
 -- vistas
 CREATE OR REPLACE VIEW v_students AS
@@ -55,39 +53,3 @@ FROM grades g;
 
 SELECT MIN(g.grade_value) AS min_grade
 FROM grades g;
-=======
-USE gradesDB;
-
-SELECT *
-FROM subjects;
-
-SELECT s.subject_name, s.acronym
-FROM subjects s
-WHERE s.acronym = 'IISSI-1';
-
-
-SELECT s.subject_name, s.acronym, s.subject_type
-FROM subjects s
-WHERE s.subject_type = 'Formacion Basica';
-
-
-SELECT p.first_name, p.last_name, pr.category
-FROM professors pr
-JOIN people p ON  pr.professor_id = p.person_id
-WHERE pr.category = 'Catedratico';
-
-
-CREATE OR REPLACE VIEW v_students AS
-SELECT
-	st.student_id,
-	st.access_method,
-	p.person_id,
-	p.dni,
-	p.first_name,
-	p.last_name,
-	p.age,
-	p.email
-FROM students st
-JOIN people p ON st.student_id = p.person_id;
-
->>>>>>> 538b4196bb15881fad9da77814990b81cdd954f2
